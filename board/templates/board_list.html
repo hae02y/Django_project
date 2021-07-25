@@ -17,31 +17,32 @@
     <title>test</title>
 </head>
 <body>
-    <div class="container">
-        <div class="row mt-5">
-            <div class="col-12 text-center">
-                <h1>로그인</h1>
-            </div>
-        </div>
-        <div class="row mt-5">
-            <div class="col-12">
-                <form method="POST" action=".">
-                    {% csrf_token %}
-                   {%for field in form%}
-                   <div class="form-group">
-                   <label for="{{field.id_for_label }}">{{field.label}}</label>
-                   <input type="{{ field.field.widget.input_type }}" class="form-control" id="{{field.id_for_label }}" placeholder="{{field.label}}" name="{{field.name}}" />
-                   </div>
-                   {%if field.errors %}
-                   <span style="color:red">{{field.errors}} </span>
-                   {%endif%}
-                   {% endfor %}
-                   
-                    <button type="submit" class="btn btn-primary">로그인</button>
-                  </form>
-            </div>
+    <div class="row mt-5">
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>제목</th>
+                        <th>아이디</th>
+                        <th>일시</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <th>제목텍스트</th>
+                        <th>gsuser</th>
+                        <th>2019-11-17</th>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-    
+    <div class="row">
+        <div class="clo-12">
+            <button class="btn btn-primary">글쓰기</button>
+        </div>
+    </div>
 </body>
 </html>

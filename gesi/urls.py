@@ -21,5 +21,6 @@ from gesiuser.views import home
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('gsuser/', include('gesiuser.urls')),
-    path('', home)
+    path('', home),
+    path('board/', include('board.urls'))
 ]
